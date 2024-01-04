@@ -13,18 +13,18 @@ add_compile_options(-std=c++11)
 # Configure directory of output file
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# Include calculator header files (e.g. same as -I flag)
+# Include calculator header files (e.g. same as -I flag) 
 include_directories(include)
 include_directories(../../include)
 include_directories(../../thirdparty/rapidjson/include)
 
-# Store cpp files in a variable
+
 file(GLOB_RECURSE CALC_PROJECT_SOURCE_FILES src/*/*.cpp)
 list(REMOVE_ITEM CALC_PROJECT_SOURCE_FILES
         "${PROJECT_SOURCE_DIR}/src/calculator/maindev.cpp"
         "${PROJECT_SOURCE_DIR}/src/calculator/mainpro.cpp")
 
-# Add the executables
+# Add the executables DONE
 add_executable(${CALCULATOR_DEV_EXEC} ${CALC_PROJECT_SOURCE_FILES} src/calculator/maindev.cpp)
 add_executable(${CALCULATOR_PRO_EXEC} ${CALC_PROJECT_SOURCE_FILES} src/calculator/mainpro.cpp)
 
